@@ -1,0 +1,2529 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eee"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/football_dialog_top" >
+
+            <LinearLayout
+                android:id="@+id/playTypeView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/backbtn_selector"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
+                <TextView
+                    android:id="@+id/typeNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="重庆时时彩-大小单双"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/white_down_arrow" />
+            </LinearLayout><FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/backbtn_selector"
+            android:onClick="clickBack" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/back_ico" />
+        </FrameLayout>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/rect_grayinside" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rect_gray"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/period"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="------"
+                    android:textColor="#FFA500"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="期"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fastTimeView"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="50dp"
+                android:layout_toLeftOf="@+id/pastView" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/tenMinute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/minute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/sec1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/sec2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pastView"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/rect_yellow"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="近期"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="开奖"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="6dp"
+                android:layout_alignLeft="@+id/fastTimeView"
+                android:layout_below="@+id/fastTimeView"
+                android:alpha="230"
+                android:background="#B5B5B5" >
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp" >
+
+                        <TextView
+                            android:id="@+id/dimentionIntro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="所选号码后一位一致,即中奖金10元"
+                            android:textColor="#404040"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/evenOddView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/rect_white" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/place_bg" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="十位"
+                                        android:textColor="#fff"
+                                        android:textSize="14sp" />
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/CQTenBigView"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/rect_gray" />
+
+                                        <TextView
+                                            android:id="@+id/CQTenBigText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="大"
+                                            android:textColor="#EE0000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/CQTenSmallView"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/rect_gray" />
+
+                                        <TextView
+                                            android:id="@+id/CQTenSmallText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="小"
+                                            android:textColor="#EE0000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/CQTenOddView"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/rect_gray" />
+
+                                        <TextView
+                                            android:id="@+id/CQTenOddText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="单"
+                                            android:textColor="#EE0000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/CQTenEvenView"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/rect_gray" />
+
+                                        <TextView
+                                            android:id="@+id/CQTenEvenText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="双"
+                                            android:textColor="#EE0000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/evenOddView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/rect_white" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/place_bg" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="个位"
+                                        android:textColor="#fff"
+                                        android:textSize="14sp" />
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/CQBigView"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/rect_gray" />
+
+                                        <TextView
+                                            android:id="@+id/CQBigText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="大"
+                                            android:textColor="#EE0000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/CQSmallView"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/rect_gray" />
+
+                                        <TextView
+                                            android:id="@+id/CQSmallText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="小"
+                                            android:textColor="#EE0000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/CQOddView"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/rect_gray" />
+
+                                        <TextView
+                                            android:id="@+id/CQOddText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="单"
+                                            android:textColor="#EE0000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/CQEvenView"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/rect_gray" />
+
+                                        <TextView
+                                            android:id="@+id/CQEvenText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="双"
+                                            android:textColor="#EE0000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/groupView"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rect_white" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" >
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_0"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_0t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="0"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_1t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="1"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_2t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="2"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_3t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="3"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_4t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="4"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_5t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="5"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_6"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_6t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="6"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_7"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_7t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="7"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" >
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_8"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_8t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="8"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:id="@+id/three_six_9"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ball_radio_selector" />
+
+                                    <TextView
+                                        android:id="@+id/three_six_9t"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="9"
+                                        android:textColor="#000000"
+                                        android:textSize="17sp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="6" >
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tenThousandView"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/rect_white" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="20dp" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/place_bg" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="万位"
+                                        android:textColor="#fff"
+                                        android:textSize="14sp" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="1"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh0"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh0t"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="0"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh1t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="1"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh2t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="2"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh3t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="3"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh4"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh4t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="4"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh5t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="5"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh6"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh6t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="6"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh7"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh7t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="7"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh8"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh8t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="8"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_wh9"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_wh9t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="9"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="4" >
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/thousandView"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rect_white" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="20dp" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/place_bg" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="千位"
+                                        android:textColor="#fff"
+                                        android:textSize="14sp" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="1"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th0"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th0t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="0"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th1t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="1"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th2t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="2"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th3t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="3"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th4"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th4t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="4"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th5t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="5"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th6"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th6t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="6"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th7"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th7t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="7"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th8"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th8t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="8"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_th9"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_th9t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="9"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="4" >
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hundredView"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rect_white" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="20dp" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/place_bg" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="百位"
+                                        android:textColor="#fff"
+                                        android:textSize="14sp" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="1"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h0"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h0t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="0"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h1t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="1"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h2t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="2"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h3t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="3"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h4"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h4t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="4"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h5t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="5"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h6"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h6t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="6"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h7"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h7t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="7"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h8"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h8t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="8"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_h9"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_h9t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="9"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="4" >
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tenView"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rect_white" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="20dp" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/place_bg" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="十位"
+                                        android:textColor="#fff"
+                                        android:textSize="14sp" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="1"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t0"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t0t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="0"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t1t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="1"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t2t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="2"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t3t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="3"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t4"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t4t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="4"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t5t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="5"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t6"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t6t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="6"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t7"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t7t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="7"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t8"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t8t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="8"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_t9"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_t9t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="9"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="4" >
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/oneView"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rect_white" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="20dp" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/place_bg" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="个位"
+                                        android:textColor="#fff"
+                                        android:textSize="14sp" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="1"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_0"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_0t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="0"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_1t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="1"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_2t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="2"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_3t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="3"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_4"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_4t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="4"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_5t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="5"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_6"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_6t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="6"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" >
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_7"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_7t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="7"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_8"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_8t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="8"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" >
+
+                                        <ImageView
+                                            android:id="@+id/three_direct_9"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ball_radio_selector" />
+
+                                        <TextView
+                                            android:id="@+id/three_direct_9t"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="9"
+                                            android:textColor="#000000"
+                                            android:textSize="17sp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="4" >
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bottom_bar"
+            android:gravity="center_vertical" >
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/title_bar" >
+
+                <LinearLayout
+                    android:id="@+id/clearView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/backbtn_selector"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="清空"
+                        android:textColor="#FFFFF0" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/ballsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/billText"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/title_bar" >
+
+                <LinearLayout
+                    android:id="@+id/handleBet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/backbtn_selector"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="选定"
+                        android:textColor="#FFFFF0" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frontView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bbp"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/dialog_bg_white"
+            android:gravity="center"
+            android:paddingBottom="30dp"
+            android:orientation="vertical"
+            android:paddingTop="30dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="距下期开售"
+                android:textColor="#888" />
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/tenMinute1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/minute1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/sec11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rect_graytime"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/sec21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

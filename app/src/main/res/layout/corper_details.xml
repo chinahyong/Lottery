@@ -1,0 +1,499 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/football_dialog_top" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="合买详情"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/backbtn_selector"
+                android:gravity="center_vertical" >
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5" />
+
+            <LinearLayout
+                android:id="@+id/refresh"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/bp_selector"
+                android:gravity="center" >
+
+<!--                 <ImageView -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:src="@drawable/news_icon" /> -->
+
+<!--                 <TextView -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_marginRight="5dp" -->
+<!--                     android:text="刷新" -->
+<!--                     android:textColor="@android:color/background_light" -->
+<!--                     android:textSize="18sp" /> -->
+            </LinearLayout>
+        </LinearLayout><FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/backbtn_selector"
+            android:onClick="clickBack" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/back_ico" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- <ScrollView -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_weight="1" > -->
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/showPullScrollList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        android:cacheColorHint="#00000000"
+        android:divider="#30878787"
+        android:dividerHeight="1dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/corp_top_rect" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:orientation="vertical" >
+
+                    <com.pkx.lottery.view.CircleProgressBar
+                        android:id="@+id/process"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+
+                    <!-- <TextView -->
+                    <!-- android:layout_width="wrap_content" -->
+                    <!-- android:layout_height="wrap_content" -->
+                    <!-- android:layout_alignBottom="@+id/process" -->
+                    <!-- android:layout_toRightOf="@+id/process" -->
+                    <!-- android:gravity="center" -->
+                    <!-- android:text="%" -->
+                    <!-- android:textColor="#EE4000" -->
+                    <!-- android:textSize="12sp" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/keep_count" -->
+<!--                         android:layout_width="match_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:gravity="center" -->
+<!--                         android:text="保24%" -->
+<!--                         android:textColor="#008B00" -->
+<!--                         android:textSize="10sp" /> -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="7"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="发起人:"
+                            android:textColor="#292929" />
+
+                        <TextView
+                            android:id="@+id/corperName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="匿名用户"
+                            android:textColor="#292929" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp" >
+
+                        <TextView
+                            android:id="@+id/total_price"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="方案金额:8元"
+                            android:textColor="#696969"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/rest_count"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="未认购:2元"
+                            android:textColor="#696969"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" >
+
+                        <TextView
+                            android:id="@+id/lottery_type"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="双色球"
+                            android:textColor="#696969"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/commission"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="佣10%"
+                            android:textColor="#696969"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/orderStatus"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:text="订单处理中"
+                            android:textColor="#696969"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+<!--                 <ImageView -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_gravity="center" -->
+<!--                     android:layout_marginRight="10dp" -->
+<!--                     android:src="@drawable/list_arrow" /> -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/corp_top_rect"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|left"
+                        android:text="我要认购:"
+                        android:textColor="#696969"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" >
+
+                    <EditText
+                        android:id="@+id/buyCount"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/corper_money_box"
+                        android:hint="至少一份(剩余64份)"
+                        android:lines="1"
+                        android:phoneNumber="true"
+                        android:textColorHint="#939292"
+                        android:textSize="14sp" >
+                    </EditText>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:gravity="center"
+                        android:text="份" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="发起时间:"
+                        android:textColor="#696969"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/starTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:gravity="center"
+                        android:text="2012-08-18 18:18:18"
+                        android:textColor="#696969"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <TextView
+                        android:id="@+id/unitPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|right"
+                        android:text="每份 : 1元"
+                        android:textColor="#696969"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="3dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|left"
+                        android:text="参与者:"
+                        android:textColor="#696969"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/copersView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/coper_box" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|left"
+                        android:text="共10人"
+                        android:textColor="#CDC9C9" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/down_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|left"
+                        android:text="方案详情:"
+                        android:textColor="#696969"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/coper_box" >
+
+                    <LinearLayout
+                        android:id="@+id/privateTypeView"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/football_bg_selector" >
+
+                        <TextView
+                            android:id="@+id/privateText"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="截止后公开"
+                            android:textColor="#CDC9C9" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/down_arrow" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|left"
+                        android:text="方案宣言:"
+                        android:textColor="#696969"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/copersView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/coper_box" >
+
+                    <TextView
+                        android:id="@+id/intro"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|left"
+                        android:text="我出方案，你收益~"
+                        android:textColor="#CDC9C9" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="#F0F0F0"
+        android:gravity="center_vertical" >
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6" >
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/corPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:text="共0元"
+            android:textColor="#FF7F00" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="2"
+            android:background="#FF7F00" >
+
+            <LinearLayout
+                android:id="@+id/handleBet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/backbtn_selector"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="选定"
+                    android:textColor="#FFFFF0" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

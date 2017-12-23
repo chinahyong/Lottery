@@ -1,0 +1,531 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/football_dialog_top" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="3D"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:visibility="invisible"
+                android:gravity="center_vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/help_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="助手"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/backbtn_selector"
+                android:gravity="center_vertical" >
+            </LinearLayout>
+
+          
+        </LinearLayout><FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/backbtn_selector"
+            android:onClick="clickBack" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/back_ico" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#eee"
+        android:gravity="center_vertical" >
+
+        <FrameLayout
+            android:id="@+id/handicView"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/add_selector" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="手动添加"
+                android:textColor="#4D4D4D" />
+
+            <ImageView
+                android:id="@+id/addBetHandly"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_margin="5dp"
+                android:src="@drawable/add_logo" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/randomView"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/add_selector" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="机选添加"
+                android:textColor="#4D4D4D" />
+
+            <ImageView
+                android:id="@+id/addBetRandomly"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_margin="5dp"
+                android:src="@drawable/add_logo" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/billList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="#00000000"
+            android:divider="#D4D4D4" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#eee" >
+
+        <LinearLayout
+            android:id="@+id/doubleView"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="3"
+            android:background="@drawable/rect_all"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="3"
+                android:background="@drawable/football_double"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="倍投"
+                    android:textColor="#696969"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/doubleBetText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="1倍"
+                    android:textColor="#696969"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/followView"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="3"
+            android:background="@drawable/rect_all"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="3"
+                android:background="@drawable/football_double"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="追号"
+                    android:textColor="#696969"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/followText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0期"
+                    android:textColor="#696969"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <!-- <LinearLayout -->
+        <!-- android:layout_width="0dp" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_marginLeft="15dp" -->
+        <!-- android:layout_marginRight="10dp" -->
+        <!-- android:layout_weight="1" > -->
+
+
+        <!-- <ImageView -->
+        <!-- android:id="@+id/doubleLeft" -->
+        <!-- android:layout_width="0dp" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_marginBottom="3dp" -->
+        <!-- android:layout_marginTop="3dp" -->
+        <!-- android:layout_weight="1.5" -->
+        <!-- android:background="@drawable/left_min_selector" /> -->
+
+
+        <!-- <LinearLayout -->
+        <!-- android:layout_width="0dp" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_marginBottom="3dp" -->
+        <!-- android:layout_marginTop="3dp" -->
+        <!-- android:layout_weight="4" -->
+        <!-- android:background="@drawable/middle_rect" -->
+        <!-- android:gravity="center" > -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/doubleBet" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:text="倍投" -->
+        <!-- android:textColor="#4D4D4D" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/doubleBetText" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:text="1" -->
+        <!-- android:textColor="#4D4D4D" /> -->
+        <!-- </LinearLayout> -->
+
+
+        <!-- <ImageView -->
+        <!-- android:id="@+id/doubleRight" -->
+        <!-- android:layout_width="0dp" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_marginBottom="3dp" -->
+        <!-- android:layout_marginTop="3dp" -->
+        <!-- android:layout_weight="1.5" -->
+        <!-- android:background="@drawable/right_add_selector" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:layout_width="0dp" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_weight="1" /> -->
+        <!-- </LinearLayout> -->
+
+<!--         <LinearLayout -->
+<!--             android:layout_width="0dp" -->
+<!--             android:layout_height="match_parent" -->
+<!--             android:layout_marginLeft="15dp" -->
+<!--             android:layout_marginRight="10dp" -->
+<!--             android:layout_weight="1" > -->
+
+<!--             <ImageView -->
+<!--                 android:id="@+id/followLeft" -->
+<!--                 android:layout_width="0dp" -->
+<!--                 android:layout_height="match_parent" -->
+<!--                 android:layout_marginBottom="3dp" -->
+<!--                 android:layout_marginTop="3dp" -->
+<!--                 android:layout_weight="1.5" -->
+<!--                 android:background="@drawable/left_min_selector" /> -->
+
+<!--             <LinearLayout -->
+<!--                 android:layout_width="0dp" -->
+<!--                 android:layout_height="match_parent" -->
+<!--                 android:layout_marginBottom="3dp" -->
+<!--                 android:layout_marginTop="3dp" -->
+<!--                 android:layout_weight="4" -->
+<!--                 android:background="@drawable/middle_rect" -->
+<!--                 android:gravity="center" > -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/follow" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:text="追号" -->
+<!--                     android:textColor="#4D4D4D" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/followText" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:text="0" -->
+<!--                     android:textColor="#4D4D4D" /> -->
+<!--             </LinearLayout> -->
+
+<!--             <ImageView -->
+<!--                 android:id="@+id/followRight" -->
+<!--                 android:layout_width="0dp" -->
+<!--                 android:layout_height="match_parent" -->
+<!--                 android:layout_marginBottom="3dp" -->
+<!--                 android:layout_marginTop="3dp" -->
+<!--                 android:layout_weight="1.5" -->
+<!--                 android:background="@drawable/right_add_selector" /> -->
+
+<!--             <TextView -->
+<!--                 android:layout_width="0dp" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_weight="1" /> -->
+<!--         </LinearLayout> -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- <RelativeLayout -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="40dp" -->
+        <!-- android:background="#DBDBDB" > -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/doubleBet" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_centerVertical="true" -->
+        <!-- android:layout_marginLeft="20dp" -->
+        <!-- android:text="倍投" -->
+        <!-- android:textColor="#4D4D4D" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/doubleBetText" -->
+        <!-- android:layout_width="90dp" -->
+        <!-- android:layout_height="35dp" -->
+        <!-- android:layout_centerVertical="true" -->
+        <!-- android:layout_toRightOf="@+id/doubleBet" -->
+        <!-- android:background="#EDEDED" -->
+        <!-- android:gravity="center" -->
+        <!-- android:phoneNumber="true" -->
+        <!-- android:text="1" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/follow" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_alignParentRight="true" -->
+        <!-- android:layout_centerVertical="true" -->
+        <!-- android:layout_marginRight="20dp" -->
+        <!-- android:text="追号" -->
+        <!-- android:textColor="#4D4D4D" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/followText" -->
+        <!-- android:layout_width="90dp" -->
+        <!-- android:layout_height="35dp" -->
+        <!-- android:layout_centerVertical="true" -->
+        <!-- android:layout_toLeftOf="@+id/follow" -->
+        <!-- android:background="#EDEDED" -->
+        <!-- android:gravity="center" -->
+        <!-- android:text="0" /> -->
+        <!-- </RelativeLayout> -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/rulesImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/rules_selected" />
+
+            <TextView
+                android:id="@+id/rulesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:lines="1"
+                android:text="我已阅读并同意"
+                android:textColor="#4D4D4D" />
+
+            <TextView
+                android:id="@+id/phoneRules"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="《电话购彩协议》"
+                android:textColor="#4876FF" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bottom_bar"
+        android:gravity="center_vertical" >
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/title_bar" >
+
+            <LinearLayout
+                android:id="@+id/corpView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/backbtn_selector"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="发合买"
+                    android:textColor="#FFFFF0" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/ballsText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/checkBillText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#FFFAFA" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/title_bar" >
+
+            <LinearLayout
+                android:id="@+id/pay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/backbtn_selector"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="付款"
+                    android:textColor="#FFFFF0" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

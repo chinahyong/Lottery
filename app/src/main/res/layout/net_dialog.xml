@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/exit_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingTop="7dp"
+    android:paddingBottom="4dp"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:background="@drawable/football_dialog_shadow"
+    android:gravity="center" >
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="加载中...请稍候"
+        android:textColor="#000" />
+
+</LinearLayout>

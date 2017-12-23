@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/homeView"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/football_dialog_top" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="购彩大厅"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7" />
+
+            <LinearLayout
+                android:id="@+id/homeLotteryNews"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/backbtn_selector"
+                android:gravity="center_vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/news_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="资讯"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:visibility="gone" >
+
+        <!-- <android.support.v4.view.ViewPager -->
+
+        <com.pkx.lottery.bean.MyViewPaper
+            android:id="@+id/adPaper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" >
+        </com.pkx.lottery.bean.MyViewPaper>
+        <!-- </android.support.v4.view.ViewPager> -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/showNum1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/show_mun_this" />
+
+                <ImageView
+                    android:id="@+id/showNum2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/show_mun" />
+
+                <ImageView
+                    android:id="@+id/showNum3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/show_mun" />
+
+                <ImageView
+                    android:id="@+id/showNum4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/show_mun" />
+
+                <ImageView
+                    android:id="@+id/showNum5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/show_mun" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="#eee" >
+
+        <!-- <com.pkx.lottery.RefreshableView -->
+        <!-- android:id="@+id/homeRefreshView" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="match_parent" > -->
+
+
+        <!-- <ListView -->
+        <!-- android:id="@+id/homeList" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_marginLeft="5dp" -->
+        <!-- android:layout_marginRight="5dp" -->
+        <!-- android:cacheColorHint="#00000000" -->
+        <!-- android:divider="#D4D4D4" -->
+        <!-- android:listSelector="#00000000" > -->
+        <!-- </ListView> -->
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/homePullList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="#00878787"
+            android:dividerHeight="0dp"
+            android:fadingEdge="none"
+            android:fastScrollEnabled="false"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:scrollbars="none"
+            android:smoothScrollbar="true" >
+
+        </com.handmark.pulltorefresh.library.PullToRefreshListView>
+        <!-- <com.pkx.lottery.xlistview.XListView -->
+        <!-- android:id="@+id/homeList" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_marginLeft="5dp" -->
+        <!-- android:layout_marginRight="5dp" -->
+        <!-- android:cacheColorHint="#00000000" -->
+        <!-- android:divider="#D4D4D4" -->
+        <!-- android:fastScrollEnabled="false" > -->
+        <!-- </com.pkx.lottery.xlistview.XListView> -->
+        <!-- </com.pkx.lottery.RefreshableView> -->
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue">#0000FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="editselecte">#FFE4B5</color>
+    <color name="red">#FF3030</color>
+    <color name="ballred">#CD0000</color>
+    <color name="ballblue">#436EEE</color>
+    <color name="top">#1E1E1E</color>
+    <color name="line_color">#D1EEEE</color>
+    <color name="background">#FFFFFF</color>
+    <color name="userinfoset_btn">#B2DFEE</color>
+    <color name="userinfoset_back">#EDEDED</color>
+    <color name="regist_back">#EDEDED</color>
+    <color name="signinact_back">#EDEDED</color>
+    <color name="aboutus_text">#8E8E8E</color>
+    <color name="back">#EDEDED</color>
+    <color name="back2">#f1eee9</color>
+    <color name="line">#E3E3E3</color>
+    <color name="function">#525252</color>
+    <color name="function2">#282828</color>
+    <color name="transparen">#9000</color>
+
+</resources>
